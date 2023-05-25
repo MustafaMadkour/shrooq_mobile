@@ -1,9 +1,11 @@
+import 'package:alshrooq/core/localization/change_locale.dart';
+import 'package:alshrooq/core/localization/translation.dart';
 import 'package:alshrooq/core/services/services.dart';
 import 'package:alshrooq/routes.dart';
+import 'package:alshrooq/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:alshrooq/core/constants/color.dart';
-import 'package:alshrooq/view/screen/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,15 +19,24 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    LocaleController controller = Get.put(LocaleController());
     return GetMaterialApp(
+      translations: MyTranslation(),
       title: 'Al-Shrooq Shop',
       debugShowCheckedModeBanner: false,
+      locale: controller.language,
       theme: ThemeData(
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
             color: AppColor.black,
             fontFamily: "Ubuntu",
-            fontWeight: FontWeight.w800,
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+          ),
+          headlineMedium: TextStyle(
+            color: AppColor.black,
+            fontFamily: "Ubuntu",
+            fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
           bodyLarge: TextStyle(
@@ -38,7 +49,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: AppColor.primaryMaterialColor,
       ),
-      home: const OnBoarding(),
+      home: const Language(),
       routes: routes,
     );
   }

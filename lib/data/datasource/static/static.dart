@@ -1,20 +1,18 @@
 import 'package:alshrooq/core/constants/image_asset.dart';
 import 'package:alshrooq/data/model/onboarding_model.dart';
+import 'package:get/get.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-      title: "Choose Product",
-      body:
-          "We have more than 10K products\n You will find everything\n you need on Al-Shrooq catalog",
+      title: "onboarding_title_one".tr,
+      body: "onboarding_body_one".tr,
       image: ImageAsset.onBoardingImgOne),
   OnBoardingModel(
-      title: "Cash on Delivery",
-      body:
-          "No credit cards for now\n You can pay cash on delivery \n more easy ways will be added later",
+      title: "onboarding_title_two".tr,
+      body: "onboarding_body_two".tr,
       image: ImageAsset.onBoardingImgTwo),
   OnBoardingModel(
-      title: "Track Your Order",
-      body:
-          "You can track your order with Al-Shrooq \n You can see your order on the map\n on Al-Shrooq Shop",
+      title: "onboarding_title_three".tr,
+      body: "onboarding_body_three".tr,
       image: ImageAsset.onBoardingImgThree),
 ];
