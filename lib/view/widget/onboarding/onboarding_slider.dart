@@ -22,13 +22,13 @@ class OnBoardingSlider extends GetView<OnBoardingController> {
             fit: BoxFit.fill,
           ),
           const SizedBox(
-            height: 60,
+            height: 30,
           ),
           Text(
             onBoardingList[i].title!,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
-           const SizedBox(
+          const SizedBox(
             height: 40,
           ),
           Container(

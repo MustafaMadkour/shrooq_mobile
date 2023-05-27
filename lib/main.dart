@@ -29,22 +29,22 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
             color: AppColor.black,
-            fontFamily: "Ubuntu",
+            fontFamily: "Roboto",
             fontWeight: FontWeight.bold,
             fontSize: 26,
           ),
           headlineMedium: TextStyle(
             color: AppColor.black,
-            fontFamily: "Ubuntu",
+            fontFamily: "Roboto",
             fontWeight: FontWeight.bold,
             fontSize: 22,
           ),
           bodyLarge: TextStyle(
             height: 1.5,
             color: AppColor.grey,
-            fontFamily: "Ubuntu",
-            // fontWeight: FontWeight.bold,
-            fontSize: 17,
+            fontFamily: "ArefRuqaa",
+            fontWeight: FontWeight.bold,
+            // fontSize: 17,
           ),
         ),
         primarySwatch: AppColor.primaryMaterialColor,

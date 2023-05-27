@@ -77,6 +77,7 @@ dependencies:
   device_preview: ^0.7.5
   responsive_builder: ^0.4.2
   image_pickers: ^2.0.0+2
+  flutter_otp_text_field: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -117,15 +118,21 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Lateef
+    - family: Marhey
       fonts:
-        - asset: assets/fonts/Lateef/Lateef-Regular.ttf
-        - asset: assets/fonts/Lateef/Lateef-Bold.ttf
+        - asset: assets/fonts/Marhey/Marhey-Regular.ttf
+        - asset: assets/fonts/Marhey/Marhey-Bold.ttf
           weight: 700
-    - family: Ubuntu
+    - family: ArefRuqaa
       fonts:
-        - asset: assets/fonts/Ubuntu/Ubuntu-Regular.ttf
-        - asset: assets/fonts/Ubuntu/Ubuntu-Bold.ttf
+        - asset: assets/fonts/ArefRuqaa/ArefRuqaa-Regular.ttf
+        - asset: assets/fonts/ArefRuqaa/ArefRuqaa-Bold.ttf
+          weight: 700
+      
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto/Roboto-Regular.ttf
+        - asset: assets/fonts/Roboto/Roboto-Bold.ttf
           weight: 700
   #
   # For details regarding fonts from package dependencies,

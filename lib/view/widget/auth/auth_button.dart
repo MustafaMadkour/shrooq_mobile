@@ -1,10 +1,10 @@
-import 'package:alshrooq/controller/onboarding_controller.dart';
 import 'package:alshrooq/core/constants/color.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-class OnBoardingButton extends GetView<OnBoardingController> {
-  const OnBoardingButton({super.key});
+class AuthButton extends StatelessWidget {
+  final String text;
+  final void Function()? onPressed;
+  const AuthButton({super.key, required this.text, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +13,14 @@ class OnBoardingButton extends GetView<OnBoardingController> {
       height: 40,
       child: MaterialButton(
         padding: const EdgeInsets.symmetric(horizontal: 100, vertical: 0),
-        onPressed: () {
-          controller.next();
-        },
+        onPressed: onPressed,
         color: AppColor.primaryColor,
         textColor: AppColor.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(25),
+        ),
         child: Text(
-          "onboarding_button".tr,
+          text,
         ),
       ),
     );
