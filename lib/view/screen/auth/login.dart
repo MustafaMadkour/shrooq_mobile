@@ -80,7 +80,7 @@ class Login extends StatelessWidget {
               onPressed: () {},
             ),
             const SizedBox(
-              height: 30,
+              height: 20,
             ),
             AuthToPage(
               text: "to_signup".tr,

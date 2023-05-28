@@ -25,23 +25,25 @@ ThemeData enTheme = ThemeData(
 );
 
 ThemeData arTheme = ThemeData(
-  fontFamily: "ArefRuqaa",
   textTheme: const TextTheme(
     headlineLarge: TextStyle(
       color: AppColor.black,
+      fontFamily: "ArefRuqaa",
       fontWeight: FontWeight.bold,
       fontSize: 26,
     ),
     headlineMedium: TextStyle(
       color: AppColor.black,
+      fontFamily: "ArefRuqaa",
       fontWeight: FontWeight.bold,
       fontSize: 22,
     ),
     bodyLarge: TextStyle(
       height: 1.5,
       color: AppColor.grey,
+      fontFamily: "Lateef",
       fontWeight: FontWeight.bold,
-      // fontSize: 17,
+      fontSize: 20,
     ),
   ),
   primarySwatch: AppColor.primaryMaterialColor,

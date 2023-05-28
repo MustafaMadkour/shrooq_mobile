@@ -18,11 +18,11 @@ class MyTranslation extends Translations {
           "login_title": "تسجيل الدخول",
           "login_subtitle": "اهلا بيك مرة تانية",
           "login_body":
-              "استخدم الحساب و كلمة المرور الخاصة بك لتسجيل الدخول \n او استخدم حسابات التواصل الاجتماعي",
+              "استخدم الحساب الخاص بك لتسجيل الدخول او استخدم حسابات التواصل الاجتماعي",
           "register_title": "التسجيل",
           "register_subtitle": "اهلا بيك",
           "register_body":
-              "استخدم الحساب و كلمة المرور الخاصة بك للتسجيل \n او استخدم حسابات التواصل الاجتماعي",
+              "استخدم الحساب الخاص بك للتسجيل او استخدم حسابات التواصل الاجتماعي",
           "forgetpass_title": "نسيت كلمة المرور",
           "forgetpass_subtitle": "تأكيد الحساب",
           "forgetpass_body":
@@ -33,8 +33,7 @@ class MyTranslation extends Translations {
               "من فضلك ادخل الكود المكون من 5 ارقام الذي تم ارساله الى بريدك الالكتروني",
           "success_title": "نجاح التأكيد",
           "success_subtitle": "تأكيد الحساب",
-          "success_body":
-              "تم تأكيد الحساب بنجاح, من فضلك قم بتسجيل الدخول",
+          "success_body": "تم تأكيد الحساب بنجاح, من فضلك قم بتسجيل الدخول",
           "resetpass_title": "كلمة مرور جديدة",
           "resetpass_subtitle": "اعادة تعيين كلمة المرور",
           "resetpass_body":
@@ -84,12 +83,10 @@ class MyTranslation extends Translations {
               "Please enter your Email to get verfication code to get new password",
           "verify_title": "Verification",
           "verify_subtitle": "Verify Email",
-          "verify_body":
-              "Please enter the 5 digits code sent to your email.",
+          "verify_body": "Please enter the 5 digits code sent to your email.",
           "success_title": "Success",
           "success_subtitle": "Email Verification",
-          "success_body":
-              "Your email is verified successfully, Please login.",
+          "success_body": "Your email is verified successfully, Please login.",
           "resetpass_title": "Password Reset",
           "resetpass_subtitle": "Reset your password",
           "resetpass_body":

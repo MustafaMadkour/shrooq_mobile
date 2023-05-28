@@ -11,10 +11,7 @@ class AuthBody extends StatelessWidget {
       child: Text(
         bodytext,
         textAlign: TextAlign.center,
-        style: Theme.of(context)
-            .textTheme
-            .bodyLarge!
-            .copyWith(fontFamily: "Roboto"),
+        style: Theme.of(context).textTheme.bodyLarge,
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:alshrooq/controller/onboarding_controller.dart';
+import 'package:alshrooq/core/constants/color.dart';
 import 'package:alshrooq/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,7 +27,12 @@ class OnBoardingSlider extends GetView<OnBoardingController> {
           ),
           Text(
             onBoardingList[i].title!,
-            style: Theme.of(context).textTheme.headlineLarge,
+            style: const TextStyle(
+              fontFamily: "Lateef",
+              color: AppColor.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 26,
+            ),
           ),
           const SizedBox(
             height: 40,
@@ -37,7 +43,13 @@ class OnBoardingSlider extends GetView<OnBoardingController> {
             child: Text(
               onBoardingList[i].body!,
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: const TextStyle(
+                fontFamily: "Lateef",
+                height: 1.5,
+                color: AppColor.grey,
+                fontWeight: FontWeight.bold,
+                fontSize: 17,
+              ),
             ),
           )
         ],
