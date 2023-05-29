@@ -12,6 +12,12 @@ class LoginController extends LoginAbst {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
+  bool isShowPass = true;
+
+  showPass() {
+    isShowPass = isShowPass == true ? false : true;
+    update();
+  }
 
   @override
   login() {

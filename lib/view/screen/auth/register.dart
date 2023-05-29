@@ -1,5 +1,6 @@
 import 'package:alshrooq/controller/auth/register_controller.dart';
 import 'package:alshrooq/core/constants/color.dart';
+import 'package:alshrooq/core/functions/alertexitapp.dart';
 import 'package:alshrooq/core/functions/validator.dart';
 import 'package:alshrooq/view/widget/auth/aut_title.dart';
 import 'package:alshrooq/view/widget/auth/auth_body.dart';
@@ -15,7 +16,7 @@ class Register extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => RegisterController());
+    RegisterController controller = Get.put(RegisterController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -25,8 +26,9 @@ class Register extends StatelessWidget {
           title: "register_title".tr,
         ),
       ),
-      body: GetBuilder<RegisterController>(
-        builder: (controller) => Container(
+      body: WillPopScope(
+        onWillPop: alertExitApp,
+        child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Form(
             key: controller.formstate,
@@ -86,27 +88,39 @@ class Register extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                AuthTextForm(
-                  isNum: false,
-                  labeltext: "pass_label".tr,
-                  hinttext: "pass_hint".tr,
-                  fieldicon: Icons.lock_outline,
-                  myController: controller.password,
-                  validate: (val) {
-                    return validator(val!, 5, 30, "pass_label".tr);
-                  },
+                GetBuilder<RegisterController>(
+                  builder: (controller) => AuthTextForm(
+                    isPass: controller.isShowPass,
+                    onTapIcon: () {
+                      controller.showPass();
+                    },
+                    isNum: false,
+                    labeltext: "pass_label".tr,
+                    hinttext: "pass_hint".tr,
+                    fieldicon: Icons.lock_outline,
+                    myController: controller.password,
+                    validate: (val) {
+                      return validator(val!, 5, 30, "pass_label".tr);
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 15,
                 ),
-                AuthTextForm(
-                  isNum: false,
-                  labeltext: "pass_confirm_label".tr,
-                  hinttext: "pass_confirm_hint".tr,
-                  fieldicon: Icons.lock_outline,
-                  validate: (val) {
-                    return validator(val!, 5, 30, "pass_confirm_label".tr);
-                  },
+                GetBuilder<RegisterController>(
+                  builder: (controller) => AuthTextForm(
+                    isPass: controller.isShowPass,
+                    onTapIcon: () {
+                      controller.showPass();
+                    },
+                    isNum: false,
+                    labeltext: "pass_confirm_label".tr,
+                    hinttext: "pass_confirm_hint".tr,
+                    fieldicon: Icons.lock_reset_outlined,
+                    validate: (val) {
+                      return validator(val!, 5, 30, "pass_confirm_label".tr);
+                    },
+                  ),
                 ),
                 const SizedBox(
                   height: 15,

@@ -1,4 +1,5 @@
 import 'package:alshrooq/core/constants/route_names.dart';
+import 'package:alshrooq/core/services/services.dart';
 import 'package:alshrooq/data/datasource/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -11,11 +12,13 @@ abstract class OnBoardingAbs extends GetxController {
 class OnBoardingController extends OnBoardingAbs {
   late PageController pageController;
   int currentPage = 0;
+  MyServices myServices = Get.find();
 
   @override
   next() {
     currentPage++;
     if (currentPage > onBoardingList.length - 1) {
+      myServices.sharedPreferences.setString("onboarding", "1");
       Get.offAllNamed(AppRoutes.login);
     } else {
       pageController.animateToPage(currentPage,

@@ -7,6 +7,8 @@ class AuthTextForm extends StatelessWidget {
   final TextEditingController? myController;
   final String? Function(String?) validate;
   final bool isNum;
+  final bool? isPass;
+  final void Function()? onTapIcon;
   const AuthTextForm(
       {super.key,
       required this.hinttext,
@@ -14,7 +16,9 @@ class AuthTextForm extends StatelessWidget {
       required this.fieldicon,
       this.myController,
       required this.validate,
-      required this.isNum});
+      required this.isNum,
+      this.isPass,
+      this.onTapIcon});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +26,7 @@ class AuthTextForm extends StatelessWidget {
       keyboardType: isNum
           ? const TextInputType.numberWithOptions(decimal: true)
           : TextInputType.text,
+      obscureText: isPass == null || isPass == false ? false : true,
       validator: validate,
       controller: myController,
       decoration: InputDecoration(
@@ -33,7 +38,10 @@ class AuthTextForm extends StatelessWidget {
         ),
         hintText: hinttext,
         hintStyle: const TextStyle(fontSize: 12),
-        suffixIcon: Icon(fieldicon),
+        suffixIcon: InkWell(
+          onTap: onTapIcon,
+          child: Icon(fieldicon),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
         ),

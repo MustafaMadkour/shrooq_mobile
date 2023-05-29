@@ -14,6 +14,12 @@ class RegisterController extends RegisterAbs {
   late TextEditingController email;
   late TextEditingController password;
   late TextEditingController passwordConfirm;
+  bool isShowPass = true;
+
+  showPass() {
+    isShowPass = isShowPass == true ? false : true;
+    update();
+  }
 
   @override
   register() {

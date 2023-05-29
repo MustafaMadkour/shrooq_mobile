@@ -11,6 +11,12 @@ class ResetPassController extends ResetPassAbs {
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController password;
   late TextEditingController passwordConfirm;
+  bool isShowPass = true;
+
+  showPass() {
+    isShowPass = isShowPass == true ? false : true;
+    update();
+  }
 
   @override
   resetPass() {}

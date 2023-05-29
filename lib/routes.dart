@@ -1,4 +1,5 @@
 import 'package:alshrooq/core/constants/route_names.dart';
+import 'package:alshrooq/core/middleware/base_middleware.dart';
 import 'package:alshrooq/view/screen/auth/forgetpass.dart';
 import 'package:alshrooq/view/screen/auth/login.dart';
 import 'package:alshrooq/view/screen/auth/register.dart';
@@ -7,20 +8,30 @@ import 'package:alshrooq/view/screen/auth/resetpass.dart';
 import 'package:alshrooq/view/screen/auth/resetsuccess.dart';
 import 'package:alshrooq/view/screen/auth/verifyforget.dart';
 import 'package:alshrooq/view/screen/auth/verifyregister.dart';
+import 'package:alshrooq/view/screen/language.dart';
 import 'package:alshrooq/view/screen/onboarding.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-Map<String, Widget Function(BuildContext)> routes = {
-  // OnBoarding
-  AppRoutes.onBoarrding: (context) => const OnBoarding(),
+List<GetPage<dynamic>>? routes = [
+  // onboarding
+  GetPage(name: AppRoutes.onBoarrding, page: () => const OnBoarding()),
+
+  // Language
+  GetPage(
+    name: "/",
+    page: () => const Language(),
+    middlewares: [
+      BaseMiddleware(),
+    ],
+  ),
 
   // Auth
-  AppRoutes.login: (context) => const Login(),
-  AppRoutes.register: (context) => const Register(),
-  AppRoutes.verifyRegister: (context) => const VerifyRegister(),
-  AppRoutes.registerSuccess: (context) => const RegisterSuccess(),
-  AppRoutes.forgetPass: (context) => const ForgetPass(),
-  AppRoutes.verifyForget: (context) => const VerifyForget(),
-  AppRoutes.resetPass: (context) => const ResetPass(),
-  AppRoutes.resetSuccess: (context) => const ResetSuccess(),
-};
+  GetPage(name: AppRoutes.login, page: () => const Login()),
+  GetPage(name: AppRoutes.register, page: () => const Register()),
+  GetPage(name: AppRoutes.verifyRegister, page: () => const VerifyRegister()),
+  GetPage(name: AppRoutes.registerSuccess, page: () => const RegisterSuccess()),
+  GetPage(name: AppRoutes.forgetPass, page: () => const ForgetPass()),
+  GetPage(name: AppRoutes.verifyForget, page: () => const VerifyForget()),
+  GetPage(name: AppRoutes.resetPass, page: () => const ResetPass()),
+  GetPage(name: AppRoutes.resetSuccess, page: () => const ResetSuccess()),
+];

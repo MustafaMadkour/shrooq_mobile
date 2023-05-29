@@ -61,6 +61,10 @@ class MyTranslation extends Translations {
           "validate_short": " اقصر مما يجب",
           "validate_pass_match": "كلمات المرور غير متطابقة",
           "validate_required": " مطلوب ولا يجب ان يكون فارغ",
+          "alert": "تنبيه",
+          "confirm": "تاكيد",
+          "cancel": "إلغاء",
+          "exit_alert": "هل تريد الخروج من البرنامج؟",
         },
         "en": {
           "language_title": "Choose Language",
@@ -119,6 +123,10 @@ class MyTranslation extends Translations {
           "validate_short": " is too short",
           "validate_pass_match": "Your passwords do not match",
           "validate_required": " is required",
+          "alert": "Alert",
+          "confirm": "Confirm",
+          "cancel": "Cancel",
+          "exit_alert": "Do you want to exit application?",
         }
       };
 }

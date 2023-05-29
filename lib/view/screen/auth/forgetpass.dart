@@ -14,7 +14,7 @@ class ForgetPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.lazyPut(() => ForgetPassController());
+    ForgetPassController controller = Get.put(ForgetPassController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -24,8 +24,7 @@ class ForgetPass extends StatelessWidget {
           title: "forgetpass_title".tr,
         ),
       ),
-      body: GetBuilder<ForgetPassController>(
-        builder: (controller) => Container(
+      body:  Container(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
           child: Form(
             key: controller.formstate,
@@ -69,7 +68,6 @@ class ForgetPass extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      );
   }
 }
