@@ -26,11 +26,11 @@ class MyTranslation extends Translations {
           "forgetpass_title": "نسيت كلمة المرور",
           "forgetpass_subtitle": "تأكيد الحساب",
           "forgetpass_body":
-              "من فضلك ادخل الحساب لاستقبال كود تأكيد الحساب للحصول على كلمة مرور جديدة",
+              "من فضلك ادخل الحساب لاستقبال رمز تأكيد الحساب للحصول على كلمة مرور جديدة",
           "verify_title": "رمز التحقق",
           "verify_subtitle": "تأكيد الحساب",
           "verify_body":
-              "من فضلك ادخل الكود المكون من 5 ارقام الذي تم ارساله الى بريدك الالكتروني",
+              "من فضلك ادخل الرمز المكون من 5 ارقام الذي تم ارساله الى بريدك الالكتروني",
           "success_title": "نجاح التأكيد",
           "success_subtitle": "تأكيد الحساب",
           "success_body": "تم تأكيد الحساب بنجاح, من فضلك قم بتسجيل الدخول",
@@ -53,9 +53,14 @@ class MyTranslation extends Translations {
           "to_signup": "هل تريد حساب جديد؟ ",
           "signin": "تسجيل الدخول",
           "signup": "التسجيل",
-          "code": "ارسل الكود",
+          "code": "ارسل الرمز",
           "verify": "تأكيد",
           "save": "حفظ",
+          "validate_notvalid": " غير مناسب",
+          "validate_long": " اطول مما يجب",
+          "validate_short": " اقصر مما يجب",
+          "validate_pass_match": "كلمات المرور غير متطابقة",
+          "validate_required": " مطلوب ولا يجب ان يكون فارغ",
         },
         "en": {
           "language_title": "Choose Language",
@@ -109,6 +114,11 @@ class MyTranslation extends Translations {
           "code": "Send Code",
           "verify": "Verify",
           "save": "Save",
+          "validate_notvalid": " is not valid",
+          "validate_long": " is too long",
+          "validate_short": " is too short",
+          "validate_pass_match": "Your passwords do not match",
+          "validate_required": " is required",
         }
       };
 }

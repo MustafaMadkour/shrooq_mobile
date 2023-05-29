@@ -1,5 +1,6 @@
 import 'package:alshrooq/controller/auth/reset_pass_controller.dart';
 import 'package:alshrooq/core/constants/color.dart';
+import 'package:alshrooq/core/functions/validator.dart';
 import 'package:alshrooq/view/widget/auth/aut_title.dart';
 import 'package:alshrooq/view/widget/auth/auth_body.dart';
 import 'package:alshrooq/view/widget/auth/auth_button.dart';
@@ -25,47 +26,56 @@ class ResetPass extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-        child: ListView(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            AuthSubTitle(
-              subtitle: "resetpass_subtitle".tr,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            AuthBody(
-              bodytext: "resetpass_body".tr,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            AuthTextForm(
-              labeltext: "pass_label".tr,
-              hinttext: "pass_hint".tr,
-              fieldicon: Icons.lock_outline,
-              myController: controller.password,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            AuthTextForm(
-              labeltext: "pass_confirm_label".tr,
-              hinttext: "pass_confirm_hint".tr,
-              fieldicon: Icons.lock_outline,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            AuthButton(
-              text: "save".tr,
-              onPressed: () {
-                controller.toResetSuccess();
-              },
-            ),
-          ],
+        child: Form(
+          key: controller.formstate,
+          child: ListView(
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              AuthSubTitle(
+                subtitle: "resetpass_subtitle".tr,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AuthBody(
+                bodytext: "resetpass_body".tr,
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              AuthTextForm(
+                labeltext: "pass_label".tr,
+                hinttext: "pass_hint".tr,
+                fieldicon: Icons.lock_outline,
+                myController: controller.password,
+                validate: (val) {
+                  return validator(val!, 5, 30, "pass_label".tr);
+                },
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              AuthTextForm(
+                labeltext: "pass_confirm_label".tr,
+                hinttext: "pass_confirm_hint".tr,
+                fieldicon: Icons.lock_outline,
+                validate: (val) {
+                  return validator(val!, 5, 30, "pass_confirm_label".tr);
+                },
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              AuthButton(
+                text: "save".tr,
+                onPressed: () {
+                  controller.toResetSuccess();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

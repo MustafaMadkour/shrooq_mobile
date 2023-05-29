@@ -8,6 +8,7 @@ abstract class ForgetPassAbs extends GetxController {
 }
 
 class ForgetPassController extends ForgetPassAbs {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController email;
 
   @override
@@ -15,7 +16,10 @@ class ForgetPassController extends ForgetPassAbs {
 
   @override
   toVerifyForget() {
-    Get.offNamed(AppRoutes.verifyForget);
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      Get.offNamed(AppRoutes.verifyForget);
+    } else {}
   }
 
   @override

@@ -5,16 +5,19 @@ class AuthTextForm extends StatelessWidget {
   final String labeltext;
   final IconData fieldicon;
   final TextEditingController? myController;
+  final String? Function(String?) validate;
   const AuthTextForm(
       {super.key,
       required this.hinttext,
       required this.labeltext,
       required this.fieldicon,
-      this.myController});
+      this.myController,
+      required this.validate});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validate,
       controller: myController,
       decoration: InputDecoration(
         floatingLabelBehavior: FloatingLabelBehavior.always,

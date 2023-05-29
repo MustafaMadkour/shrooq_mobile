@@ -8,6 +8,7 @@ abstract class ResetPassAbs extends GetxController {
 }
 
 class ResetPassController extends ResetPassAbs {
+  GlobalKey<FormState> formstate = GlobalKey<FormState>();
   late TextEditingController password;
   late TextEditingController passwordConfirm;
 
@@ -16,7 +17,10 @@ class ResetPassController extends ResetPassAbs {
 
   @override
   toResetSuccess() {
-    Get.offAllNamed(AppRoutes.resetSuccess);
+    var formdata = formstate.currentState;
+    if (formdata!.validate()) {
+      Get.offAllNamed(AppRoutes.resetSuccess);
+    } else {}
   }
 
   @override
