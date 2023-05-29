@@ -50,6 +50,7 @@ class Login extends StatelessWidget {
                       height: 30,
                     ),
                     AuthTextForm(
+                      isNum: false,
                       labeltext: "email_label".tr,
                       hinttext: "email_hint".tr,
                       fieldicon: Icons.email_outlined,
@@ -62,6 +63,7 @@ class Login extends StatelessWidget {
                       height: 20,
                     ),
                     AuthTextForm(
+                      isNum: false,
                       labeltext: "pass_label".tr,
                       hinttext: "pass_hint".tr,
                       fieldicon: Icons.lock_outline,

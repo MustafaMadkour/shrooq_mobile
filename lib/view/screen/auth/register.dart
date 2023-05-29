@@ -48,6 +48,7 @@ class Register extends StatelessWidget {
                   height: 15,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "username_label".tr,
                   hinttext: "username_hint".tr,
                   fieldicon: Icons.person,
@@ -60,6 +61,7 @@ class Register extends StatelessWidget {
                   height: 15,
                 ),
                 AuthTextForm(
+                  isNum: true,
                   labeltext: "phone_label".tr,
                   hinttext: "phone_hint".tr,
                   fieldicon: Icons.phone_android_outlined,
@@ -72,6 +74,7 @@ class Register extends StatelessWidget {
                   height: 15,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "email_label".tr,
                   hinttext: "email_hint".tr,
                   fieldicon: Icons.email_outlined,
@@ -84,6 +87,7 @@ class Register extends StatelessWidget {
                   height: 15,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "pass_label".tr,
                   hinttext: "pass_hint".tr,
                   fieldicon: Icons.lock_outline,
@@ -96,6 +100,7 @@ class Register extends StatelessWidget {
                   height: 15,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "pass_confirm_label".tr,
                   hinttext: "pass_confirm_hint".tr,
                   fieldicon: Icons.lock_outline,

@@ -47,6 +47,7 @@ class ResetPass extends StatelessWidget {
                   height: 40,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "pass_label".tr,
                   hinttext: "pass_hint".tr,
                   fieldicon: Icons.lock_outline,
@@ -59,6 +60,7 @@ class ResetPass extends StatelessWidget {
                   height: 20,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "pass_confirm_label".tr,
                   hinttext: "pass_confirm_hint".tr,
                   fieldicon: Icons.lock_outline,

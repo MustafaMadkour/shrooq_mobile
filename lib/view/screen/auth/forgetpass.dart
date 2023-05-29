@@ -47,6 +47,7 @@ class ForgetPass extends StatelessWidget {
                   height: 40,
                 ),
                 AuthTextForm(
+                  isNum: false,
                   labeltext: "email_label".tr,
                   hinttext: "email_hint".tr,
                   fieldicon: Icons.email_outlined,
