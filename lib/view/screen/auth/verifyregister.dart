@@ -13,7 +13,7 @@ class VerifyRegister extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyRegisterController controller = Get.put(VerifyRegisterController());
+    Get.lazyPut(() => VerifyRegisterController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -23,40 +23,42 @@ class VerifyRegister extends StatelessWidget {
           title: "verify_title".tr,
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-        child: ListView(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            AuthSubTitle(
-              subtitle: "verify_subtitle".tr,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            AuthBody(
-              bodytext: "verify_body".tr,
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            AuthOtp(
-              onSubmit: (code) {
-                controller.toRegisterSuccess();
-              },
-            ),
-            const SizedBox(
-              height: 40,
-            ),
-            AuthButton(
-              text: "verify".tr,
-              onPressed: () {
-                // controller.toRegisterSuccess();
-              },
-            ),
-          ],
+      body: GetBuilder<VerifyRegisterController>(
+        builder: (controller) => Container(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+          child: ListView(
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              AuthSubTitle(
+                subtitle: "verify_subtitle".tr,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AuthBody(
+                bodytext: "verify_body".tr,
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              AuthOtp(
+                onSubmit: (code) {
+                  controller.toRegisterSuccess();
+                },
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              AuthButton(
+                text: "verify".tr,
+                onPressed: () {
+                  // controller.toRegisterSuccess();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

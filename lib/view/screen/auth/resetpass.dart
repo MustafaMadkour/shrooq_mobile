@@ -14,7 +14,7 @@ class ResetPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ResetPassController controller = Get.put(ResetPassController());
+    Get.lazyPut(() => ResetPassController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -24,57 +24,59 @@ class ResetPass extends StatelessWidget {
           title: "resetpass_title".tr,
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-        child: Form(
-          key: controller.formstate,
-          child: ListView(
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              AuthSubTitle(
-                subtitle: "resetpass_subtitle".tr,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              AuthBody(
-                bodytext: "resetpass_body".tr,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              AuthTextForm(
-                labeltext: "pass_label".tr,
-                hinttext: "pass_hint".tr,
-                fieldicon: Icons.lock_outline,
-                myController: controller.password,
-                validate: (val) {
-                  return validator(val!, 5, 30, "pass_label".tr);
-                },
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              AuthTextForm(
-                labeltext: "pass_confirm_label".tr,
-                hinttext: "pass_confirm_hint".tr,
-                fieldicon: Icons.lock_outline,
-                validate: (val) {
-                  return validator(val!, 5, 30, "pass_confirm_label".tr);
-                },
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              AuthButton(
-                text: "save".tr,
-                onPressed: () {
-                  controller.toResetSuccess();
-                },
-              ),
-            ],
+      body: GetBuilder<ResetPassController>(
+        builder: (controller) => Container(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+          child: Form(
+            key: controller.formstate,
+            child: ListView(
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                AuthSubTitle(
+                  subtitle: "resetpass_subtitle".tr,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                AuthBody(
+                  bodytext: "resetpass_body".tr,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                AuthTextForm(
+                  labeltext: "pass_label".tr,
+                  hinttext: "pass_hint".tr,
+                  fieldicon: Icons.lock_outline,
+                  myController: controller.password,
+                  validate: (val) {
+                    return validator(val!, 5, 30, "pass_label".tr);
+                  },
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                AuthTextForm(
+                  labeltext: "pass_confirm_label".tr,
+                  hinttext: "pass_confirm_hint".tr,
+                  fieldicon: Icons.lock_outline,
+                  validate: (val) {
+                    return validator(val!, 5, 30, "pass_confirm_label".tr);
+                  },
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                AuthButton(
+                  text: "save".tr,
+                  onPressed: () {
+                    controller.toResetSuccess();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

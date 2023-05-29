@@ -12,7 +12,7 @@ class RegisterSuccess extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    RegisterSuccessController controller = Get.put(RegisterSuccessController());
+    Get.lazyPut(() => RegisterSuccessController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -22,40 +22,42 @@ class RegisterSuccess extends StatelessWidget {
           title: "success_title".tr,
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 40,
-            ),
-            AuthSubTitle(subtitle: "success_subtitle".tr),
-            const SizedBox(
-              height: 30,
-            ),
-            AuthBody(
-              bodytext: "success_body".tr,
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const Center(
-              child: Icon(
-                Icons.check_circle_outline,
-                size: 200,
-                color: AppColor.primaryColor,
+      body: GetBuilder<RegisterSuccessController>(
+        builder: (controller) => Container(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 40,
               ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            AuthButton(
-              text: "signin".tr,
-              onPressed: () {
-                controller.toLogin();
-              },
-            )
-          ],
+              AuthSubTitle(subtitle: "success_subtitle".tr),
+              const SizedBox(
+                height: 30,
+              ),
+              AuthBody(
+                bodytext: "success_body".tr,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              const Center(
+                child: Icon(
+                  Icons.check_circle_outline,
+                  size: 200,
+                  color: AppColor.primaryColor,
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              AuthButton(
+                text: "signin".tr,
+                onPressed: () {
+                  controller.toLogin();
+                },
+              )
+            ],
+          ),
         ),
       ),
     );

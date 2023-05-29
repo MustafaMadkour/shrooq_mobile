@@ -14,7 +14,7 @@ class ForgetPass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ForgetPassController controller = Get.put(ForgetPassController());
+    Get.lazyPut(() => ForgetPassController());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -24,46 +24,48 @@ class ForgetPass extends StatelessWidget {
           title: "forgetpass_title".tr,
         ),
       ),
-      body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
-        child: Form(
-          key: controller.formstate,
-          child: ListView(
-            children: [
-              const SizedBox(
-                height: 10,
-              ),
-              AuthSubTitle(
-                subtitle: "forgetpass_subtitle".tr,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              AuthBody(
-                bodytext: "forgetpass_body".tr,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              AuthTextForm(
-                labeltext: "email_label".tr,
-                hinttext: "email_hint".tr,
-                fieldicon: Icons.email_outlined,
-                myController: controller.email,
-                validate: (val) {
-                  return validator(val!, 5, 100, "email_label".tr);
-                },
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              AuthButton(
-                text: "code".tr,
-                onPressed: () {
-                  controller.toVerifyForget();
-                },
-              ),
-            ],
+      body: GetBuilder<ForgetPassController>(
+        builder: (controller) => Container(
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 40),
+          child: Form(
+            key: controller.formstate,
+            child: ListView(
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                AuthSubTitle(
+                  subtitle: "forgetpass_subtitle".tr,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                AuthBody(
+                  bodytext: "forgetpass_body".tr,
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                AuthTextForm(
+                  labeltext: "email_label".tr,
+                  hinttext: "email_hint".tr,
+                  fieldicon: Icons.email_outlined,
+                  myController: controller.email,
+                  validate: (val) {
+                    return validator(val!, 5, 100, "email_label".tr);
+                  },
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                AuthButton(
+                  text: "code".tr,
+                  onPressed: () {
+                    controller.toVerifyForget();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),
