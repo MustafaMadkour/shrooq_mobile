@@ -1,5 +1,6 @@
 import 'package:alshrooq/core/constants/route_names.dart';
 import 'package:alshrooq/core/middleware/base_middleware.dart';
+import 'package:alshrooq/test_view.dart';
 import 'package:alshrooq/view/screen/auth/forgetpass.dart';
 import 'package:alshrooq/view/screen/auth/login.dart';
 import 'package:alshrooq/view/screen/auth/register.dart';
@@ -17,12 +18,16 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoutes.onBoarrding, page: () => const OnBoarding()),
 
   // Language
+  // GetPage(
+  //   name: "/",
+  //   page: () => const Language(),
+  //   middlewares: [
+  //     BaseMiddleware(),
+  //   ],
+  // ),
   GetPage(
     name: "/",
-    page: () => const Language(),
-    middlewares: [
-      BaseMiddleware(),
-    ],
+    page: () => const TestView(),
   ),
 
   // Auth

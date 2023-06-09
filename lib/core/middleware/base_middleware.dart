@@ -1,3 +1,5 @@
+// ignore_for_file: body_might_complete_normally_nullable
+
 import 'package:alshrooq/core/constants/route_names.dart';
 import 'package:alshrooq/core/services/services.dart';
 import 'package:flutter/material.dart';

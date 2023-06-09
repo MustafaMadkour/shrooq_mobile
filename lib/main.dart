@@ -1,8 +1,8 @@
+import 'package:alshrooq/bindings/initialbinding.dart';
 import 'package:alshrooq/core/localization/change_locale.dart';
 import 'package:alshrooq/core/localization/translation.dart';
 import 'package:alshrooq/core/services/services.dart';
 import 'package:alshrooq/routes.dart';
-import 'package:alshrooq/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
       locale: controller.language,
       theme: controller.appTheme,
       getPages: routes,
+      initialBinding: InitialBindings(),
       // routes: routes,
     );
   }
